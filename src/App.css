@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  /* //padding: 48px; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  /* overflow-y: auto; */
+  box-sizing: border-box;
+  scrollbar-width: 1px;
 }
 
 .App-logo {

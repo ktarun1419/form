@@ -1,0 +1,29 @@
+.form{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    background-color: beige;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    flex-direction: column;
+    padding: 48px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    height: auto;
+    overflow-y: auto;
+    scrollbar-width: 0px;
+    font-size: 24px;
+    text-align: left;
+
+}
+.form_field{
+    width: 100%;
+    max-width: 500px;
+   background-color: white;
+    border-radius: 32px;
+    padding: 48px 36px;
+    /* border: 1px solid black; */
+
+
+}
