@@ -19,7 +19,7 @@
 }
 .form_field{
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
    background-color: white;
     border-radius: 8px;display: flex;
     flex-direction: column;
@@ -29,4 +29,7 @@
     /* border: 1px solid black; */
 
 
+}
+.form_field h6 , h4 , p{
+    margin-block-start: 0;
 }

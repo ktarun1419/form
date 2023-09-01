@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background: rgb(225, 165, 225);
+  background: #8177eb;
+  /* background: rgb(225, 165, 225); */
   min-height: 100vh;
   /* overflow-y: auto; */
   box-sizing: border-box;

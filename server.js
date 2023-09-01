@@ -10,9 +10,16 @@ const buildPath = path.join(__dirname, 'build')
 app.use(express.static(buildPath))
 app.use(express.json()) ;
 app.use(cors()) ;
+// app.use((req, res, next) => {
+//     res.append('Access-Control-Allow-Origin', ['*']);
+//     res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//     res.append('Access-Control-Allow-Headers', 'Content-Type');
+    
+// });
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'))
 })
+
 app.post('/submit-form',async (req, res) => {
   const { name, email, feedback } = req.body;
  let pass='asthamittal'
@@ -64,9 +71,7 @@ app.post('/submit-form',async (req, res) => {
   console.log("Message sent: %s", info.messageId);
   res.status(200).send("Done...");
  });
-
-const PORT = 'https://foofle-gorm.onrender.com/';
-const PORT2=3000
-app.listen(PORT, () => {
+const PORT2= process.env.PORT||3000
+app.listen(PORT2, () => {
   console.log(`Server is running on port ${PORT2}`);
 });

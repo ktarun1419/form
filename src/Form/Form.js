@@ -132,10 +132,10 @@ const Form = () => {
         }).then((res) => {
           console.log(res?.uuid);
           let url = `https://ucarecdn.com/${res?.uuid}/`;
-          let postURL='http://localhost:3000/submit-form'
+          let postURL='https://form-k87d.onrender.com/submit-form'
         //   https://foofle-gorm.onrender.com/submit-form
           axios
-            .post('https://foofle-gorm.onrender.com/submit-form', {
+            .post(postURL, {
               name: data['name']?.value,
               email: data['email']?.value,
               feedback: url,
@@ -154,8 +154,18 @@ const Form = () => {
     <div className="form" id="form1">
         {response ? 'Thank you for response your response has been recorded and an copy of response has been sent to your email' : <>
     <h1>Foofle Gorm</h1>
+    <div className="form_field">
+        <h4>
+        Customized SOP Generator
+        </h4>
+        <p>
+        Fill this questionnaire for the student. After submitting, you will receive an email at the email address that you have provided with a Statement of Purpose customized for you. You can use and modify that as per your needs. 
+
+If you would like to get it edited, reviewed, or drafted by our experts, you can get in touch with us: https://effizient-immigration-inc.square.site/s/shop
+        </p>
+    </div>
       <div className="form_field">
-        <h4>{data['email']?.question}</h4>
+        <h6>{data['email']?.question}</h6>
         <TextField
           required
           name="email"
@@ -170,6 +180,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['name']?.question}</h6>
         <TextField
           onChange={handleChange}
           name="name"
@@ -183,6 +194,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['age']?.question}</h6>
         <TextField
           required
           onChange={handleChange}
@@ -198,6 +210,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['education']?.question}</h6>
         <FormControl sx={{ m: 1, minWidth: 120, width: "100%" }}>
           <InputLabel id="demo-simple-select-helper-label">
             {data["education"]?.question}
@@ -224,6 +237,7 @@ const Form = () => {
         </FormControl>
       </div>
       <div className="form_field">
+      <h6>{data['institute']?.question}</h6>
         <TextField
           required
           name="institute"
@@ -237,6 +251,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['field']?.question}</h6>
         <TextField
           required
           name="field"
@@ -250,6 +265,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['experience']?.question}</h6>
         <TextField
           required
           name="experience"
@@ -263,6 +279,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['institute_canada']?.question}</h6>
         <TextField
           required
           name="institute_canada"
@@ -276,6 +293,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['program']?.question}</h6>
         <TextField
           required
           name="program"
@@ -289,6 +307,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['country']?.question}</h6>
         <TextField
           required
           name="country"
@@ -302,6 +321,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['future']?.question}</h6>
         <TextField
           required
           name="future"
@@ -315,6 +335,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['listening']?.question}</h6>
         <TextField
           name="listening"
           required
@@ -329,6 +350,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['speaking']?.question}</h6>
         <TextField
           name="speaking"
           required
@@ -342,6 +364,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['writing']?.question}</h6>
         <TextField
           required
           name="writing"
@@ -355,6 +378,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['reading']?.question}</h6>
         <TextField
           required
           name="reading"
@@ -369,6 +393,7 @@ const Form = () => {
       </div>
 
       <div className="form_field">
+      <h6>{data['tution_fee']?.question}</h6>
         <FormControl fullWidth>
           <FormLabel id="demo-controlled-radio-buttons-group">
             {data["tution_fee"]?.question}*
@@ -387,6 +412,7 @@ const Form = () => {
         </FormControl>
       </div>
       <div className="form_field">
+      <h6>{data['actual_fee']?.question}</h6>
         <TextField
           error={errorState === "actual_fee"}
           id="age"
@@ -400,6 +426,7 @@ const Form = () => {
         />
       </div>
       <div className="form_field">
+      <h6>{data['gic']?.question}</h6>
         <FormControl fullWidth>
           <FormLabel id="demo-controlled-radio-buttons-group">
             {data["gic"]?.question}*
@@ -418,6 +445,7 @@ const Form = () => {
         </FormControl>
       </div>
       <div className="form_field">
+      <h6>{data['gic_amount']?.question}</h6>
         <TextField
           required
           name="gic_amount"
