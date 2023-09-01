@@ -106,21 +106,21 @@ const Form = () => {
     });
   };
   const handleSubmit = async () => {
-    let keys=Object.keys(data)
-    let error=false
-    for (let index = 0; index < keys.length; index++) {
-        const key = keys[index];
-        if (data[key]['value']==='' ||data[key]['value']===0 ) {
-            setErrorState(key)
-            error=true
-            return
-        }
+    // let keys=Object.keys(data)
+    // let error=false
+    // for (let index = 0; index < keys.length; index++) {
+    //     const key = keys[index];
+    //     if (data[key]['value']==='' ||data[key]['value']===0 ) {
+    //         setErrorState(key)
+    //         error=true
+    //         return
+    //     }
         
-    }
-    console.log('fffffff');
-    if (error) {
-        return
-    }
+    // }
+    // console.log('fffffff');
+    // if (error) {
+    //     return
+    // }
     html2canvas(document.querySelector("#form1"), {
       scrollY: -window.screenY,
     }).then((canvas) => {
@@ -132,8 +132,10 @@ const Form = () => {
         }).then((res) => {
           console.log(res?.uuid);
           let url = `https://ucarecdn.com/${res?.uuid}/`;
+          let postURL='http://localhost:3000/submit-form'
+        //   https://foofle-gorm.onrender.com/submit-form
           axios
-            .post("https://foofle-gorm.onrender.com/submit-form", {
+            .post('https://foofle-gorm.onrender.com/submit-form', {
               name: data['name']?.value,
               email: data['email']?.value,
               feedback: url,
@@ -153,6 +155,7 @@ const Form = () => {
         {response ? 'Thank you for response your response has been recorded and an copy of response has been sent to your email' : <>
     <h1>Foofle Gorm</h1>
       <div className="form_field">
+        <h4>{data['email']?.question}</h4>
         <TextField
           required
           name="email"

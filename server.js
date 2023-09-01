@@ -22,8 +22,9 @@ app.post('/submit-form',async (req, res) => {
     secure:false ,
     port: 587,
     auth: {
-        user: 'asthamittal1923@gmail.com',
-        pass: pass
+        type:'login',
+        user: 'mehakbrar811@gmail.com',
+        pass: 'zqwngkixzazxckkn',
     }
   });
   
@@ -65,6 +66,7 @@ app.post('/submit-form',async (req, res) => {
  });
 
 const PORT = 'https://foofle-gorm.onrender.com/';
+const PORT2=3000
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT2}`);
 });
