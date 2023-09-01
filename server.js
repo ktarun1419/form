@@ -24,7 +24,7 @@ app.post('/submit-form',async (req, res) => {
   // Create a Nodemailer transporter using your email service
   const transporter = await nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    secure:false ,
+    secure:true ,
     port: 587,
     auth: {
         user: 'mehakbrar811@gmail.com',
