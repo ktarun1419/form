@@ -23,14 +23,14 @@ app.post('/submit-form',async (req, res) => {
     secure:false ,
     port: 587,
     auth: {
-        user: 'mehakbrar811@gmail.com',
-        pass: 'zqwngkixzazxckkn',
+        user: 'asthamittal1923@gmail.com',
+        pass: 'uyecbxjcxwxcucrf',
     }
   });
   
 
   const info = await transporter.sendMail({
-    from: 'mehakbrar811@gmail.com', // sender address
+    from: 'asthamittal1923@gmail.com', // sender address
     to: email, // list of receivers
     subject: `Hello ${name} ,Here are your responses`, // Subject line
     // text: `Hello ${name},\n\nThank you for your feedback:\n\n${feedback}\n\nBest regards,\nYour Team`, // plain text body
@@ -65,7 +65,7 @@ app.post('/submit-form',async (req, res) => {
   res.status(200).send("Done...");
  });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

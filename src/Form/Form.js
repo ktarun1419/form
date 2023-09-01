@@ -133,6 +133,7 @@ const Form = () => {
           console.log(res?.uuid);
           let url = `https://ucarecdn.com/${res?.uuid}/`;
           let postURL='https://form-k87d.onrender.com/submit-form'
+        // let postURL='http://localhost:3000/submit-form'
         //   https://foofle-gorm.onrender.com/submit-form
           axios
             .post(postURL, {
@@ -428,9 +429,9 @@ If you would like to get it edited, reviewed, or drafted by our experts, you can
       <div className="form_field">
       <h6>{data['gic']?.question}</h6>
         <FormControl fullWidth>
-          <FormLabel id="demo-controlled-radio-buttons-group">
+          {/* <FormLabel id="demo-controlled-radio-buttons-group">
             {data["gic"]?.question}*
-          </FormLabel>
+          </FormLabel> */}
           <RadioGroup
             required
             aria-labelledby="demo-controlled-radio-buttons-group"

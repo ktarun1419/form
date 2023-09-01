@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background: #8177eb;
+  background: lavender;
+  /* background: #8177eb; */
   /* background: rgb(225, 165, 225); */
   min-height: 100vh;
   /* overflow-y: auto; */
@@ -16,6 +17,8 @@
   height: 40vmin;
   pointer-events: none;
 }
+p{
+  font-size: 20px;}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
