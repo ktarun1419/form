@@ -10,12 +10,6 @@ const buildPath = path.join(__dirname, 'build')
 app.use(express.static(buildPath))
 app.use(express.json()) ;
 app.use(cors()) ;
-// app.use((req, res, next) => {
-//     res.append('Access-Control-Allow-Origin', ['*']);
-//     res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//     res.append('Access-Control-Allow-Headers', 'Content-Type');
-    
-// });
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'))
 })
@@ -29,7 +23,6 @@ app.post('/submit-form',async (req, res) => {
     secure:false ,
     port: 587,
     auth: {
-        type:'login',
         user: 'mehakbrar811@gmail.com',
         pass: 'zqwngkixzazxckkn',
     }
@@ -71,7 +64,8 @@ app.post('/submit-form',async (req, res) => {
   console.log("Message sent: %s", info.messageId);
   res.status(200).send("Done...");
  });
-const PORT2= process.env.PORT||3000
-app.listen(PORT2, () => {
-  console.log(`Server is running on port ${PORT2}`);
+
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
