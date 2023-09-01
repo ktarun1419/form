@@ -15,15 +15,15 @@ app.get('*', (req, res) => {
 })
 app.post('/submit-form',async (req, res) => {
   const { name, email, feedback } = req.body;
-
+ let pass='asthamittal'
   // Create a Nodemailer transporter using your email service
   const transporter = await nodemailer.createTransport({
     host: 'smtp.gmail.com',
     secure:false ,
     port: 587,
     auth: {
-        user: 'mehakbrar811@gmail.com',
-        pass: 'zqwngkixzazxckkn'
+        user: 'asthamittal1923@gmail.com',
+        pass: pass
     }
   });
   
