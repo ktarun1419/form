@@ -4,14 +4,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors') ;
-const multer = require('multer');
-
-
 const app = express();
+const buildPath = path.join(__dirname, 'build')
+app.use(express.static(buildPath))
 app.use(express.json()) ;
 app.use(cors()) ;
-const storage=multer.memoryStorage()
-const upload=multer({storage:storage})
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'))
+})
 app.post('/submit-form',async (req, res) => {
   const { name, email, feedback } = req.body;
 
