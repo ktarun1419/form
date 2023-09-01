@@ -10,6 +10,11 @@ const buildPath = path.join(__dirname, 'build')
 app.use(express.static(buildPath))
 app.use(express.json()) ;
 app.use(cors()) ;
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+});
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'))
 })
