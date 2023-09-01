@@ -69,7 +69,7 @@ app.post('/submit-form',async (req, res) => {
   res.status(200).send("Done...");
  });
 
-const PORT = 'https://foofle-gorm.onrender.com/';
+const PORT = 'https://form-k87d.onrender.com';
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
