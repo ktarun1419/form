@@ -133,7 +133,7 @@ const Form = () => {
           console.log(res?.uuid);
           let url = `https://ucarecdn.com/${res?.uuid}/`;
           axios
-            .post("http://localhost:3001/submit-form", {
+            .post("https://foofle-gorm.onrender.com/submit-form", {
               name: data['name']?.value,
               email: data['email']?.value,
               feedback: url,
