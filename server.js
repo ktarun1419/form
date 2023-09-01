@@ -10,11 +10,11 @@ const buildPath = path.join(__dirname, 'build')
 app.use(express.static(buildPath))
 app.use(express.json()) ;
 app.use(cors()) ;
-app.use((req, res, next) => {
-    res.append('Access-Control-Allow-Origin', ['*']);
-    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.append('Access-Control-Allow-Headers', 'Content-Type');
-});
+// app.use((req, res, next) => {
+//     res.append('Access-Control-Allow-Origin', ['*']);
+//     res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//     res.append('Access-Control-Allow-Headers', 'Content-Type');
+// });
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'))
 })
@@ -69,7 +69,7 @@ app.post('/submit-form',async (req, res) => {
   res.status(200).send("Done...");
  });
 
-const PORT = 'https://form-k87d.onrender.com';
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
