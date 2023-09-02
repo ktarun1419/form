@@ -17,6 +17,7 @@ import { uploadDirect } from "@uploadcare/upload-client";
 const Form = () => {
   const [errorState, setErrorState] = useState(null);
   const [response,setResponse]=useState(false)
+  const [submit,setSubmit]=useState(false)
   const [data, setData] = useImmer({
     email: {
       question: "Email",
@@ -106,21 +107,22 @@ const Form = () => {
     });
   };
   const handleSubmit = async () => {
-    // let keys=Object.keys(data)
-    // let error=false
-    // for (let index = 0; index < keys.length; index++) {
-    //     const key = keys[index];
-    //     if (data[key]['value']==='' ||data[key]['value']===0 ) {
-    //         setErrorState(key)
-    //         error=true
-    //         return
-    //     }
+    let keys=Object.keys(data)
+    let error=false
+    for (let index = 0; index < keys.length; index++) {
+        const key = keys[index];
+        if (data[key]['value']==='' ||data[key]['value']===0 ) {
+            setErrorState(key)
+            error=true
+            return
+        }
         
-    // }
-    // console.log('fffffff');
-    // if (error) {
-    //     return
-    // }
+    }
+    console.log('fffffff');
+    if (error) {
+        return
+    }
+    setSubmit(true)
     html2canvas(document.querySelector("#form1"), {
       scrollY: -window.screenY,
     }).then((canvas) => {
@@ -459,7 +461,7 @@ If you would like to get it edited, reviewed, or drafted by our experts, you can
           onChange={handleChange}
         />
       </div>
-      <Button variant="contained" onClick={handleSubmit} >
+      <Button variant="contained" onClick={handleSubmit} disabled={submit} >
         Submit
       </Button>
     </> }

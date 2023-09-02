@@ -11,6 +11,7 @@
   /* overflow-y: auto; */
   box-sizing: border-box;
   scrollbar-width: 1px;
+  position: relative;
 }
 
 .App-logo {
