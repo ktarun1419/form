@@ -398,9 +398,9 @@ If you would like to get it edited, reviewed, or drafted by our experts, you can
       <div className="form_field">
       <h6>{data['tution_fee']?.question}</h6>
         <FormControl fullWidth>
-          <FormLabel id="demo-controlled-radio-buttons-group">
+          {/* <FormLabel id="demo-controlled-radio-buttons-group">
             {data["tution_fee"]?.question}*
-          </FormLabel>
+          </FormLabel> */}
           <RadioGroup
             aria-labelledby="demo-controlled-radio-buttons-group"
             name="tution_fee"
